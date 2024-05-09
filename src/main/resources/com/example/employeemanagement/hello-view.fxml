@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="1215.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.HelloController">
+    <children>
+        <MFXButton fx:id="hello" buttonType="RAISED" depthLevel="LEVEL5" layoutX="28.0" layoutY="26.0" onAction="#onHelloButtonClick" rippleColor="#a16565" text="hello" textFill="#c31313">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </MFXButton>
+      <Label fx:id="welcomeText" layoutX="-1.0" layoutY="163.0" prefHeight="62.0" prefWidth="1215.0" textFill="#bc1313">
+         <font>
+            <Font size="73.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
