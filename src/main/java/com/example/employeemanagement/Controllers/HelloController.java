@@ -1,4 +1,4 @@
-package com.example.employeemanagement;
+package com.example.employeemanagement.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
