@@ -36,6 +36,7 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="05385332-9f69-4f45-9b13-1182f5ac843d" dataset="empmanage.Employee" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="38e40bf8-3719-4366-9bfa-4a18d4b596de" dataset="demo.user" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="38e40bf8-3719-4366-9bfa-4a18d4b596de" dataset="empmanage.Employee" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />

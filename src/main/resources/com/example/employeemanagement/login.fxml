@@ -2,54 +2,54 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="944.0" prefWidth="1389.0" style="-fx-background-color: #c9d2d6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.LoginController">
+<AnchorPane prefHeight="1240.0" prefWidth="1909.0" style="-fx-background-color: #c9d2d6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.LoginController">
    <children>
-      <HBox layoutX="-1.0" prefHeight="475.0" prefWidth="1103.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="200.0">
+      <HBox layoutX="-1.0" prefHeight="1026.0" prefWidth="1691.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
          <children>
-            <Pane prefHeight="475.0" prefWidth="686.0">
+            <Pane prefHeight="1026.0" prefWidth="800.0">
                <children>
-                  <Label layoutX="-2.0" layoutY="-1.0" prefHeight="475.0" prefWidth="538.0" text="Employee Management" textAlignment="CENTER" textFill="#a81818" wrapText="true">
+                  <Label alignment="CENTER" layoutX="-2.0" layoutY="-1.0" prefHeight="475.0" prefWidth="800.0" text="Employee Management" textAlignment="CENTER" textFill="#a81818" wrapText="true">
                      <font>
                         <Font name="System Bold Italic" size="43.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="475.0" prefWidth="712.0">
+            <Pane prefHeight="979.0" prefWidth="712.0">
                <children>
-                  <Label layoutX="-1.0" layoutY="21.0" prefHeight="16.0" prefWidth="406.0" text="Email:" textFill="#901919">
+                  <Label layoutX="2.0" layoutY="86.0" prefHeight="16.0" prefWidth="406.0" text="Email:" textFill="#901919">
                      <font>
                         <Font size="29.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="loginEmail" layoutX="5.0" layoutY="62.0" prefHeight="36.0" prefWidth="400.0" promptText="enter email" style="-fx-border-color: #c24a32; -fx-border-width: 2; -fx-border-radius: 5;">
+                  <TextField fx:id="loginEmail" layoutX="5.0" layoutY="143.0" prefHeight="36.0" prefWidth="400.0" promptText="enter email" style="-fx-border-color: #c24a32; -fx-border-width: 2; -fx-border-radius: 5;">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="-1.0" layoutY="112.0" prefHeight="16.0" prefWidth="406.0" text="Password:" textFill="#901919">
+                  <Label layoutX="-1.0" layoutY="193.0" prefHeight="16.0" prefWidth="406.0" text="Password:" textFill="#901919">
                      <font>
                         <Font size="29.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="loginPassword" layoutX="5.0" layoutY="154.0" prefHeight="36.0" prefWidth="400.0" promptText="enter Password" style="-fx-border-color: #c24a32; -fx-border-radius: 4; -fx-border-width: 2;">
+                  <MFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="5.0" layoutY="318.0" onAction="#handleLogin" prefHeight="36.0" prefWidth="400.0" rippleAnimateShadow="true" rippleColor="#33d727" style="-fx-background-color: #33d727;" text="Log in" textFill="#eeebeb" />
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="607.0" text="Log In" textAlignment="CENTER" textFill="#901919">
                      <font>
-                        <Font size="19.0" />
+                        <Font size="50.0" />
                      </font>
-                  </TextField>
-                  <MFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="6.0" layoutY="237.0" onAction="#handleLogin" prefHeight="36.0" prefWidth="400.0" rippleAnimateShadow="true" rippleColor="#33d727" style="-fx-background-color: #33d727;" text="Log in" textFill="#eeebeb" />
-                  <Label alignment="CENTER" layoutY="324.0" prefHeight="20.0" prefWidth="287.0" text="Haven't signed Up yet ?" textAlignment="CENTER" textFill="#901919">
+                  </Label>
+                  <PasswordField layoutX="-1.0" layoutY="242.0" prefHeight="36.0" prefWidth="406.0" promptText="enter password" style="-fx-border-color: #c24a32; -fx-border-width: 3; -fx-border-radius: 4;">
                      <font>
                         <Font size="16.0" />
                      </font>
-                  </Label>
-                  <MFXButton fx:id="redirectRgister" buttonType="RAISED" layoutX="287.0" layoutY="316.0" onAction="#handleRedirectRegister" prefHeight="36.0" prefWidth="118.0" rippleAnimateShadow="true" rippleColor="#1b5a8d" style="-fx-background-color: #2d8cda;" text="Log in" textFill="#eeebeb" />
+                  </PasswordField>
                </children>
             </Pane>
          </children>

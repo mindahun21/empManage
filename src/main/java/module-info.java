@@ -13,6 +13,8 @@ module com.example.employeemanagement {
     requires java.sql;
     requires jakarta.persistence;
     requires org.hibernate.orm.core;
+    requires MaterialFX;
+    requires jdk.compiler;
 
     opens com.example.employeemanagement to javafx.fxml;
     exports com.example.employeemanagement;

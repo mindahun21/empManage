@@ -1,65 +1,88 @@
 package com.example.employeemanagement.Models;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+
+import java.sql.Date;
+
 
 @Entity
 @Table(name = "Employee")
 public class Employee {
-    public enum Role {
-        normal,
-        staff,
-        admin
-    }
 
+    public enum Role {
+        Admin,
+        Staff
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+    @Column(name = "EmployeeID")
+    private int employeeId;
 
-    @Column(name = "first_name")
+    @Column(name = "FirstName")
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "LastName")
     private String lastName;
 
-    @Column(name = "date_of_birth")
-    private LocalDate dateOfBirth;
-
+    @Column(name = "Gender")
     private String gender;
-    private String email;
 
-    @Column(name = "phone_number")
-    private String phoneNumber;
+    @Column(name = "DateOfBirth")
+    private java.sql.Date dateOfBirth;
 
-    private String address;
-
+    @Column(name = "Role")
     @Enumerated(EnumType.STRING)
-    @Column(name = "role")
     private Role role;
 
-    public Employee() {
-    }
+    @Column(name = "DepartmentID")
+    private Integer departmentId;
 
-    public Employee(String firstName, String lastName, LocalDate dateOfBirth, String gender, String email,
-                    String phoneNumber, String address, Role role) {
+    @Column(name = "Email")
+    private String email;
+
+    @Column(name = "Phone")
+    private String phone;
+
+    @Column(name = "Address")
+    private String address;
+
+    @Column(name = "DateOfJoining")
+    private Date dateOfJoining;
+
+    @Column(name = "EmergencyContact")
+    private String emergencyContact;
+
+    @Column(name = "Position")
+    private String position;
+
+    @Column(name = "BaseSalary")
+    private double baseSalary;
+
+    public Employee(){
+
+    }
+    public Employee(String firstName, String lastName, String gender, Date dateOfBirth, Role role, Integer departmentId, String email, String phone, String address, java.sql.Date dateOfJoining, String emergencyContact, String position, double baseSalary) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
         this.gender = gender;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
+        this.dateOfBirth = dateOfBirth;
         this.role = role;
+        this.departmentId = departmentId;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.dateOfJoining = dateOfJoining;
+        this.emergencyContact = emergencyContact;
+        this.position = position;
+        this.baseSalary = baseSalary;
     }
 
-    // Add getters and setters (or use Lombok annotations) for all the fields
-    public int getId() {
-        return id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 
     public String getFirstName() {
@@ -78,20 +101,36 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
     public String getGender() {
         return gender;
     }
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public java.sql.Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(java.sql.Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public Integer getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     public String getEmail() {
@@ -102,12 +141,12 @@ public class Employee {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getAddress() {
@@ -118,11 +157,36 @@ public class Employee {
         this.address = address;
     }
 
-    public Role getRole() {
-        return role;
+    public java.sql.Date getDateOfJoining() {
+        return dateOfJoining;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setDateOfJoining(java.sql.Date dateOfJoining) {
+        this.dateOfJoining = dateOfJoining;
+    }
+
+    public String getEmergencyContact() {
+        return emergencyContact;
+    }
+
+    public void setEmergencyContact(String emergencyContact) {
+        this.emergencyContact = emergencyContact;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
     }
 }
+
