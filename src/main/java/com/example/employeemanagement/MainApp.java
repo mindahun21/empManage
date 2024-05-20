@@ -14,12 +14,12 @@ import java.time.LocalDate;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {                   //(1)
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("admin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
         Parent root =loader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add("style.css");
         primaryStage.setScene(scene);
-        primaryStage.setTitle("materialFx Test");
+        primaryStage.setTitle("Employee Management System");
         primaryStage.show();
     }
     public static void main(String[] args) throws SQLException {
