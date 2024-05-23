@@ -34,7 +34,11 @@ public class LoginController {
 
         Employee employee = Database.findObjectByCriteria(Employee.class, criteria);
         if (employee != null) {
-            mainApp.showHomePage(employee);
+            if(employee.getRole() == Employee.Role.Admin){
+                mainApp.showHomePage(employee);
+            }else{
+                mainApp.showStaffPage(employee);
+            }
         } else {
             Helper.showAlert(Alert.AlertType.ERROR,"Login Error", "Invalid email or password.", "Please check your login credentials and try again.");
         }

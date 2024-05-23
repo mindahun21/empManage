@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1016.0" prefWidth="1914.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1016.0" prefWidth="1914.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.StaffPageController">
     <children>
         <SplitPane dividerPositions="0.2176814011676397" layoutY="-1.0" prefHeight="821.0" prefWidth="1914.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
             <items>
@@ -23,16 +23,16 @@
                         </Label>
                         <Pane prefHeight="72.0" prefWidth="220.0" style="-fx-background-color: #636366;">
                             <children>
-                                <Label alignment="CENTER" layoutY="2.0" prefHeight="24.0" prefWidth="240.0" text="Administrator" textFill="#a11c1c">
+                                <Label alignment="CENTER" layoutY="2.0" prefHeight="24.0" prefWidth="240.0" text="Employee" textFill="#a11c1c">
                                     <font>
                                         <Font size="24.0" />
                                     </font>
                                 </Label>
-                        <Label fx:id="username" alignment="CENTER" layoutX="4.0" layoutY="36.0" prefHeight="30.0" prefWidth="240.0" textFill="#063916">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                        </Label>
+                                <Label fx:id="username" alignment="CENTER" layoutX="4.0" layoutY="36.0" prefHeight="30.0" prefWidth="240.0" textFill="#063916">
+                                    <font>
+                                        <Font size="26.0" />
+                                    </font>
+                                </Label>
                             </children>
                         </Pane>
                         <Label prefHeight="74.0" prefWidth="244.0" style="-fx-background-color: #1b1b1c;" text="MAIN NAVIGATION" textFill="#a19c9c">
@@ -47,37 +47,14 @@
                             </font>
                         </MFXButton>
                         <Separator layoutX="10.0" layoutY="350.0" prefWidth="200.0" />
-                        <MFXButton fx:id="btnManageDept" onAction="#showManageDept" prefHeight="49.0" prefWidth="240.0" style="-fx-background-color: #707080;" text="Manage Department" textFill="#f8f8f8">
+                        <MFXButton fx:id="btnApplyLeave" onAction="#showApplyLeave" prefHeight="49.0" prefWidth="240.0" style="-fx-background-color: #707080;" text="Apply Leave" textFill="#f8f8f8">
                             <font>
                                 <Font size="21.0" />
                             </font>
                         </MFXButton>
-                        <Separator prefWidth="200.0" />
-                        <MFXButton fx:id="btnAddDept" onAction="#showAddDept" prefHeight="54.0" prefWidth="240.0" style="-fx-background-color: #707080;" text="Add Department" textFill="#f5f2f2">
-                            <font>
-                                <Font size="23.0" />
-                            </font>
-                        </MFXButton>
-                        <Separator prefWidth="200.0" />
-                        <MFXButton fx:id="btnAddStaff" onAction="#showAddStaff" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: #707080;" text="Add Staff" textFill="#ebebeb">
-                            <font>
-                                <Font size="24.0" />
-                            </font>
-                        </MFXButton>
-                        <Separator prefWidth="200.0" />
-                        <MFXButton fx:id="btnManageStaff" onAction="#showManageStaff" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #707080;" text="Manage Staff" textFill="#e1dddd">
-                            <font>
-                                <Font size="22.0" />
-                            </font>
-                        </MFXButton>
+
                         <Separator layoutX="10.0" layoutY="465.0" prefWidth="200.0" />
-                        <MFXButton fx:id="btnManageSalary" layoutX="10.0" layoutY="468.0" onAction="#showManageSalary" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #707080;" text="Manage Salary" textFill="#e1dddd">
-                            <font>
-                                <Font size="22.0" />
-                            </font>
-                        </MFXButton>
-                        <Separator layoutX="10.0" layoutY="465.0" prefWidth="200.0" />
-                        <MFXButton fx:id="btnManageLeave" layoutX="10.0" layoutY="468.0" onAction="#showLeaveRequests" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #707080;" text="Leave Requests" textFill="#e1dddd">
+                        <MFXButton fx:id="btnSalary" layoutX="10.0" layoutY="468.0" onAction="#showSalary" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #707080;" text="Salary" textFill="#e1dddd">
                             <font>
                                 <Font size="22.0" />
                             </font>

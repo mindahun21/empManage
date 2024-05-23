@@ -1,8 +1,6 @@
 package com.example.employeemanagement;
 
-import com.example.employeemanagement.Controllers.DashboardController;
-import com.example.employeemanagement.Controllers.HomeController;
-import com.example.employeemanagement.Controllers.LoginController;
+import com.example.employeemanagement.Controllers.*;
 import com.example.employeemanagement.Models.Employee;
 import com.example.employeemanagement.database.Database;
 import javafx.application.Application;
@@ -21,10 +19,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
-
-//        showLoginPage();
-        Employee employee = Database.getObjectById(Employee.class,2);
-        showHomePage(employee);
+        showLoginPage();
     }
 
     public void showLoginPage() {
@@ -71,9 +66,34 @@ public class MainApp extends Application {
             homeController.setPane(dashboardRoot);
 
             primaryStage.setScene(scene);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void showStaffPage(Employee employee) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("staffPage.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            URL cssUrl = getClass().getResource("style.css");
+            if (cssUrl == null) {
+                System.err.println("Could not find style.css");
+            } else {
+                scene.getStylesheets().add(cssUrl.toExternalForm());
+            }
+            StaffPageController staffPageController = loader.getController();
+            staffPageController.setMainApp(this);
+            staffPageController.setEmployee(employee);
 
-            primaryStage.show(); // need to comment this line if login
+            FXMLLoader dashboardLoader = new FXMLLoader();
+            dashboardLoader.setLocation(getClass().getResource("/com/example/employeemanagement/staffDashboard.fxml"));
+            Parent dashboardRoot = dashboardLoader.load();
+            StaffDashboardController dashboardController = dashboardLoader.getController();
+            dashboardController.setStaffPageController(staffPageController);
+            staffPageController.setPane(dashboardRoot);
 
+            primaryStage.setScene(scene);
         } catch (Exception e) {
             e.printStackTrace();
         }

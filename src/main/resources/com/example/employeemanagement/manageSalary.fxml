@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane fx:id="manageSalaryPane" layoutX="10.0" layoutY="10.0" prefHeight="819.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;" visible="true" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.ManageSallaryController">
+<Pane fx:id="manageSalaryPane" layoutX="10.0" layoutY="10.0" prefHeight="1011.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.ManageSalaryController">
     <children>
         <FlowPane prefHeight="54.0" prefWidth="1677.0">
             <children>
-                <Label prefHeight="49.0" prefWidth="1573.0" style="-fx-background-color: #1b3270;" text="Sallary management" textFill="#e1dcdc">
+                <Label prefHeight="49.0" prefWidth="1370.0" style="-fx-background-color: #1b3270;" text="Salary management" textFill="#e1dcdc">
                     <font>
                         <Font name="System Bold" size="40.0" />
                     </font>
@@ -18,6 +22,14 @@
                         <Insets left="10.0" />
                     </padding>
                 </Label>
+                  <MFXButton fx:id="btnCalculateSalary" buttonType="RAISED" onAction="#handleCalculateSalary" prefHeight="49.0" prefWidth="179.0" style="-fx-background-color: green;" text="Calculate Salary">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets right="20.0" />
+               </FlowPane.margin>
+            </MFXButton>
                 <MFXButton fx:id="btnLogout" onAction="#handleLogout" prefHeight="48.0" prefWidth="80.0" style="-fx-background-color: #3480eb;" text="Log Out" textFill="#fcf8f8">
                     <font>
                         <Font size="15.0" />
@@ -25,5 +37,23 @@
                 </MFXButton>
             </children>
         </FlowPane>
+        <ScrollPane layoutX="19.0" layoutY="66.0" prefHeight="933.0" prefWidth="1625.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+         <content>
+                  <TableView fx:id="salaryTable" prefHeight="915.0" prefWidth="1585.0">
+                      <columns>
+                          <TableColumn fx:id="employeeIdCol" prefWidth="104.0" text="Employee ID" />
+                          <TableColumn fx:id="employeeNameCol" prefWidth="238.0" text="Employee Name" />
+                          <TableColumn fx:id="baseSalaryCol" prefWidth="174.0" text="Base Salary" />
+                          <TableColumn fx:id="overtimePayCol" prefWidth="140.0" text="Overtime Pay" />
+                          <TableColumn fx:id="totalSalaryCol" prefWidth="155.0" text="Total Salary" />
+                          <TableColumn fx:id="statusCol" prefWidth="134.0" text="Status" />
+                          <TableColumn fx:id="actionCol" prefWidth="280.0" text="Action" />
+                      </columns>
+                  </TableView>
+         </content>
+        </ScrollPane>
     </children>
 </Pane>

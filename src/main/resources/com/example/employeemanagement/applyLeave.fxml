@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="applyLeavePane" layoutX="10.0" layoutY="10.0" prefHeight="819.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.ApplyLeaveController">
+    <children>
+        <FlowPane prefHeight="54.0" prefWidth="1677.0">
+            <children>
+                <Label prefHeight="49.0" prefWidth="1573.0" style="-fx-background-color: #1b3270;" text="Apply Leave" textFill="#e1dcdc">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <MFXButton fx:id="btnLogout" onAction="#handleLogout" prefHeight="48.0" prefWidth="80.0" style="-fx-background-color: #3480eb;" text="Log Out" textFill="#fcf8f8">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </MFXButton>
+            </children>
+        </FlowPane>
+      <VBox layoutX="14.0" layoutY="68.0" prefHeight="734.0" prefWidth="1641.0" style="-fx-background-color: white;">
+         <padding>
+            <Insets bottom="10.0" left="200.0" right="200.0" top="50.0" />
+         </padding>
+         <children>
+            <FlowPane prefHeight="49.0" prefWidth="1621.0">
+               <children>
+                  <Label prefHeight="51.0" prefWidth="214.0" text="Reason">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="leaveReason" prefHeight="49.0" prefWidth="1027.0" promptText="please enter your reason" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </FlowPane>
+            <FlowPane prefHeight="397.0" prefWidth="1241.0">
+               <children>
+                  <Label prefHeight="51.0" prefWidth="214.0" text="Description">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="leaveDescription" prefHeight="396.0" prefWidth="1025.0" promptText="please enter description (optional)" wrapText="true">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </TextArea>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </FlowPane>
+            <FlowPane alignment="TOP_RIGHT" prefHeight="55.0" prefWidth="1241.0">
+               <children>
+                  <MFXButton fx:id="submitLeave" buttonType="RAISED" onAction="#handleSubmitLeave" prefHeight="52.0" prefWidth="107.0" style="-fx-background-color: green;" text="submit" />
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+    </children>
+</Pane>

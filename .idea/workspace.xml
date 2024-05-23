@@ -5,36 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d362c798-11e0-43ab-a485-7f6a60112e72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/AddDeptController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/AddStaffController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/DashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/EditStaffController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/ManageDeptController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/ManageSallaryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/ManageStaffController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Helper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/addDept.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/addStaff.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/dashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/editStaff.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/manageDept.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/manageSalary.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/manageStaff.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/AttendanceSampleData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/ApplyLeaveController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/ApproveLeaveRequestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/ManageSalaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/StaffDashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/StaffPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/StaffSalaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Models/Attendance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Models/EmployeeLeave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Models/Salary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/SalaryCalculation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/applyLeave.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/approveLeaveRequest.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/manageLeaveRequest.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/staffDashboard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/staffPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/staffSalary.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/RegisterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/DemoDb/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/ManageSallaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Controllers/ManageLeaveRequestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Models/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Models/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/Models/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/employeemanagement/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/dashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/manageSalary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/employeemanagement/manageSalary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>

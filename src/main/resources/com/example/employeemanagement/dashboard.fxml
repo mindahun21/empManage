@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.text.Font?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane xmlns="http://javafx.com/javafx"
-      fx:controller="com.example.employeemanagement.Controllers.DashboardController"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:id="dashboardPane" prefHeight="819.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;" styleClass="-" stylesheets="@style.css" visible="true">
+<Pane fx:id="dashboardPane" prefHeight="819.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;" styleClass="-" stylesheets="@style.css" visible="true" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.DashboardController">
     <children>
         <HBox layoutY="85.0" prefHeight="225.0" prefWidth="1666.0">
             <children>
                 <Pane prefHeight="162.0" prefWidth="323.0" style="-fx-background-color: #3195d4;">
                     <children>
-                        <Label layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="0" textFill="#f2eded">
+                        <Label fx:id="departmentsCountLabel" layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="0" textFill="#f2eded">
                             <font>
                                 <Font size="41.0" />
                             </font>
@@ -34,12 +30,12 @@
                 <Separator orientation="VERTICAL" prefHeight="225.0" prefWidth="139.0" />
                 <Pane layoutX="10.0" layoutY="10.0" prefHeight="162.0" prefWidth="290.0" style="-fx-background-color: #e84875;">
                     <children>
-                        <Label layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="0" textFill="#f2eded">
+                        <Label fx:id="staffCountLabel" layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="0" textFill="#f2eded">
                             <font>
                                 <Font size="41.0" />
                             </font>
                         </Label>
-                        <Label layoutX="4.0" layoutY="59.0" prefHeight="50.0" prefWidth="200.0" text="Staff" textFill="#f2eded">
+                        <Label layoutX="4.0" layoutY="59.0" prefHeight="50.0" prefWidth="200.0" text="Staffs" textFill="#f2eded">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -50,7 +46,7 @@
                 <Separator layoutX="210.0" layoutY="10.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="175.0" />
                 <Pane layoutX="240.0" layoutY="10.0" prefHeight="162.0" prefWidth="288.0" style="-fx-background-color: #e68c2c;">
                     <children>
-                        <Label layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="0" textFill="#f2eded">
+                        <Label fx:id="LeaveRequestCountLabel" layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="0" textFill="#f2eded">
                             <font>
                                 <Font size="41.0" />
                             </font>
@@ -60,13 +56,13 @@
                                 <Font size="18.0" />
                             </font>
                         </Label>
-                        <MFXButton layoutY="187.0" prefHeight="38.0" prefWidth="281.0" style="-fx-background-color: #bd7324;" text="more info -&gt;" />
+                        <MFXButton layoutY="187.0" onAction="#showLeaveRequests" prefHeight="38.0" prefWidth="281.0" style="-fx-background-color: #bd7324;" text="more info -&gt;" />
                     </children>
                 </Pane>
                 <Separator layoutX="440.0" layoutY="10.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="140.0" />
                 <Pane layoutX="470.0" layoutY="10.0" prefHeight="162.0" prefWidth="297.0" style="-fx-background-color: #4ac926;">
                     <children>
-                        <Label layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="\$0" textFill="#f2eded">
+                        <Label fx:id="payedSalaryLabel" layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="290.0" text="\$0" textFill="#f2eded">
                             <font>
                                 <Font size="41.0" />
                             </font>

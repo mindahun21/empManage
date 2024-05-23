@@ -1,5 +1,7 @@
 package com.example.employeemanagement.database;
 
+import com.example.employeemanagement.Models.Attendance;
+import com.example.employeemanagement.Models.Salary;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -71,6 +73,66 @@ public class Database {
             em.close();
         }
     }
+    public static <T> List<T> findObjectsByCriteria(Class<T> clazz, Map<String, Object> criteria) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            CriteriaBuilder cb = em.getCriteriaBuilder();
+            CriteriaQuery<T> query = cb.createQuery(clazz);
+            Root<T> root = query.from(clazz);
+
+            Predicate[] predicates = criteria.entrySet().stream()
+                    .map(entry -> cb.equal(root.get(entry.getKey()), entry.getValue()))
+                    .toArray(Predicate[]::new);
+
+            query.select(root).where(predicates);
+
+            return em.createQuery(query).getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            em.close();
+        }
+    }
+    public static <T> long countObjectsByCriteria(Class<T> clazz, Map<String, Object> criteria) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            CriteriaBuilder cb = em.getCriteriaBuilder();
+            CriteriaQuery<Long> query = cb.createQuery(Long.class);
+            Root<T> root = query.from(clazz);
+
+            Predicate[] predicates = criteria.entrySet().stream()
+                    .map(entry -> cb.equal(root.get(entry.getKey()), entry.getValue()))
+                    .toArray(Predicate[]::new);
+
+            query.select(cb.count(root)).where(predicates);
+
+            return em.createQuery(query).getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        } finally {
+            em.close();
+        }
+    }
+    public static double getTotalSalaryOfPaidEmployees() {
+        EntityManager em = emf.createEntityManager();
+        try {
+            CriteriaBuilder cb = em.getCriteriaBuilder();
+            CriteriaQuery<Double> query = cb.createQuery(Double.class);
+            Root<Salary> root = query.from(Salary.class);
+
+            Predicate paidStatusPredicate = cb.equal(root.get("status"), Salary.Status.Paid);
+            query.select(cb.sum(root.get("totalSalary"))).where(paidStatusPredicate);
+
+            return em.createQuery(query).getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        } finally {
+            em.close();
+        }
+    }
     public static <T> List<T> findAll(Class<T> clazz) {
         EntityManager em = emf.createEntityManager();
         try {
@@ -83,6 +145,28 @@ public class Database {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        } finally {
+            em.close();
+        }
+    }
+    public static double getTotalOvertimeForEmployee(int employeeId) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("EmployeeManagementPU");
+        EntityManager em = emf.createEntityManager();
+
+        try {
+            CriteriaBuilder cb = em.getCriteriaBuilder();
+            CriteriaQuery<Double> cq = cb.createQuery(Double.class);
+            Root<Attendance> root = cq.from(Attendance.class);
+
+            cq.select(cb.sum(root.get("OvertimeHours")));
+            Predicate employeePredicate = cb.equal(root.get("EmployeeID"), employeeId);
+            cq.where(employeePredicate);
+
+            Double totalOvertime = em.createQuery(cq).getSingleResult();
+            return totalOvertime != null ? totalOvertime : 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
         } finally {
             em.close();
         }
