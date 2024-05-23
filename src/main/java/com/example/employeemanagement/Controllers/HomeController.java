@@ -1,10 +1,15 @@
 package com.example.employeemanagement.Controllers;
 
-import com.example.employeemanagement.DemoDb.Employee;
+import com.example.employeemanagement.Models.Employee;
 import com.example.employeemanagement.MainApp;
 import javafx.fxml.FXML;
-import javafx.scene.layout.Pane;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+
+import java.io.IOException;
+import java.lang.reflect.Method;
 
 public class HomeController {
     private MainApp mainApp;
@@ -12,68 +17,89 @@ public class HomeController {
 
     @FXML
     private StackPane mainStackPane;
-    @FXML
-    private Pane dashboardPane;
-    @FXML
-    private Pane manageSalaryPane;
-    @FXML
-    private Pane manageStaffPane;
-    @FXML
-    private Pane addStaffPane;
-    @FXML
-    private Pane manageDeptPane;
-    @FXML
-    private Pane addDeptPane;
 
     @FXML
-    private void showDashboard(){
-        hideAllPanes();
-        dashboardPane.setVisible(true);
-    }
+    private Label username;
+
     @FXML
-    private void showManageSalary(){
-        hideAllPanes();
-        manageSalaryPane.setVisible(true);
+    private void initialize() {
+        if (employee != null) {
+            username.setText("@" + employee.getFirstName());
+        } else {
+            System.err.println("Employee is not set in HomeController");
+        }
+//        showDashboard();
     }
-    @FXML
-    private void showManageStaff(){
-        hideAllPanes();
-        manageStaffPane.setVisible(true);
+
+    public void setPane(Node pane) {
+        mainStackPane.getChildren().setAll(pane);
     }
+
     @FXML
-    private void showAddStaff(){
-        hideAllPanes();
-        addStaffPane.setVisible(true);
+    public void showDashboard() {
+        loadPane("/com/example/employeemanagement/dashboard.fxml");
     }
+
     @FXML
-    private void showManageDept(){
-        hideAllPanes();
-        manageDeptPane.setVisible(true);
+    public void showManageSalary() {
+        loadPane("/com/example/employeemanagement/manageSalary.fxml");
     }
+
     @FXML
-    private void showAddDept(){
-        hideAllPanes();
-        addDeptPane.setVisible(true);
+    public void showManageStaff() {
+        loadPane("/com/example/employeemanagement/manageStaff.fxml");
     }
+
     @FXML
-    private void handleLogout(){
+    public void showAddStaff() {
+        loadPane("/com/example/employeemanagement/addStaff.fxml");
+    }
+
+    @FXML
+    public void showManageDept() {
+        loadPane("/com/example/employeemanagement/manageDept.fxml");
+    }
+
+    @FXML
+    public void showAddDept() {
+        loadPane("/com/example/employeemanagement/addDept.fxml");
+    }
+
+    @FXML
+    public void handleLogout() {
         mainApp.showLoginPage();
     }
 
-
-
-    private void hideAllPanes() {
-        dashboardPane.setVisible(false);
-        manageDeptPane.setVisible(false);
-        manageSalaryPane.setVisible(false);
-        manageStaffPane.setVisible(false);
-        addDeptPane.setVisible(false);
-        addStaffPane.setVisible(false);
-    }
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }
-    public void setEmployee(Employee employee){
+
+    public void setEmployee(Employee employee) {
         this.employee = employee;
+        if (username != null) {
+            username.setText("@" + employee.getFirstName());
+        }
+    }
+
+    private void loadPane(String fxml) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            Node pane = loader.load();
+            setPane(pane);
+
+            Object controller = loader.getController();
+            Method setHomeControllerMethod = null;
+            try {
+                setHomeControllerMethod = controller.getClass().getMethod("setHomeController", HomeController.class);
+            } catch (NoSuchMethodException e) {
+                // Method not found, not all controllers need to have this method
+            }
+
+            if (setHomeControllerMethod != null) {
+                setHomeControllerMethod.invoke(controller, this);
+            }
+        } catch (IOException | ReflectiveOperationException e) {
+            e.printStackTrace();
+        }
     }
 }

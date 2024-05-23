@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="manageSalaryPane" layoutX="10.0" layoutY="10.0" prefHeight="819.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;" visible="true" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.ManageSallaryController">
+    <children>
+        <FlowPane prefHeight="54.0" prefWidth="1677.0">
+            <children>
+                <Label prefHeight="49.0" prefWidth="1573.0" style="-fx-background-color: #1b3270;" text="Sallary management" textFill="#e1dcdc">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <MFXButton fx:id="btnLogout" onAction="#handleLogout" prefHeight="48.0" prefWidth="80.0" style="-fx-background-color: #3480eb;" text="Log Out" textFill="#fcf8f8">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </MFXButton>
+            </children>
+        </FlowPane>
+    </children>
+</Pane>

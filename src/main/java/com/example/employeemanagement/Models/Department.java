@@ -1,6 +1,9 @@
 package com.example.employeemanagement.Models;
 
 import jakarta.persistence.*;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 @Entity
 @Table(name = "Department")
@@ -12,7 +15,7 @@ public class Department {
     private Integer departmentId;
 
     @Column(name = "DepartmentName")
-    private String departmentName;
+    private String deptName;
 
     @Column(name = "ManagerID")
     private Integer managerId;
@@ -25,8 +28,8 @@ public class Department {
         // Default constructor
     }
 
-    public Department(String departmentName, Integer managerId) {
-        this.departmentName = departmentName;
+    public Department(String deptName, Integer managerId) {
+        this.deptName = deptName;
         this.managerId = managerId;
     }
 
@@ -34,16 +37,17 @@ public class Department {
         return departmentId;
     }
 
+
     public void setDepartmentId(Integer departmentId) {
         this.departmentId = departmentId;
     }
 
     public String getDepartmentName() {
-        return departmentName;
+        return deptName;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public void setDepartmentName(String deptName) {
+        this.deptName = deptName;
     }
 
     public Integer getManagerId() {
@@ -60,5 +64,12 @@ public class Department {
 
     public void setManager(Employee manager) {
         this.manager = manager;
+    }
+    public SimpleIntegerProperty departmentIdProperty() {
+        return new SimpleIntegerProperty(departmentId);
+    }
+
+    public SimpleStringProperty departmentNameProperty() {
+        return new SimpleStringProperty(deptName);
     }
 }

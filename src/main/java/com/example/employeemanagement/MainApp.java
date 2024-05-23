@@ -1,14 +1,17 @@
 package com.example.employeemanagement;
 
-
+import com.example.employeemanagement.Controllers.DashboardController;
 import com.example.employeemanagement.Controllers.HomeController;
 import com.example.employeemanagement.Controllers.LoginController;
-import com.example.employeemanagement.DemoDb.Employee;
+import com.example.employeemanagement.Models.Employee;
+import com.example.employeemanagement.database.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.net.URL;
 import java.sql.SQLException;
 
 public class MainApp extends Application {
@@ -16,9 +19,12 @@ public class MainApp extends Application {
 
 
     @Override
-    public void start(Stage primaryStage) throws Exception {                   //(1)
+    public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
-        showLoginPage();
+
+//        showLoginPage();
+        Employee employee = Database.getObjectById(Employee.class,2);
+        showHomePage(employee);
     }
 
     public void showLoginPage() {
@@ -26,11 +32,16 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("login.fxml"));
             Parent root = loader.load();
-
+            Scene scene = new Scene(root);
+            URL cssUrl = getClass().getResource("style.css");
+            if (cssUrl == null) {
+                System.err.println("Could not find style.css");
+            } else {
+                scene.getStylesheets().add(cssUrl.toExternalForm());
+            }
             LoginController loginController = loader.getController();
             loginController.setMainApp(this);
-
-            primaryStage.setScene(new Scene(root));
+            primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,12 +52,28 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("home.fxml"));
             Parent root = loader.load();
-
+            Scene scene = new Scene(root);
+            URL cssUrl = getClass().getResource("style.css");
+            if (cssUrl == null) {
+                System.err.println("Could not find style.css");
+            } else {
+                scene.getStylesheets().add(cssUrl.toExternalForm());
+            }
             HomeController homeController = loader.getController();
             homeController.setMainApp(this);
             homeController.setEmployee(employee);
 
-            primaryStage.setScene(new Scene(root));
+            FXMLLoader dashboardLoader = new FXMLLoader();
+            dashboardLoader.setLocation(getClass().getResource("/com/example/employeemanagement/dashboard.fxml"));
+            Parent dashboardRoot = dashboardLoader.load();
+            DashboardController dashboardController = dashboardLoader.getController();
+            dashboardController.setHomeController(homeController);
+            homeController.setPane(dashboardRoot);
+
+            primaryStage.setScene(scene);
+
+            primaryStage.show(); // need to comment this line if login
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -56,3 +83,5 @@ public class MainApp extends Application {
         launch();
     }
 }
+
+

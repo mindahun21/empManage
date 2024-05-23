@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+
+<Pane xmlns="http://javafx.com/javafx"
+      fx:controller="com.example.employeemanagement.Controllers.DashboardController"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:id="dashboardPane" prefHeight="819.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;" styleClass="-" stylesheets="@style.css" visible="true">
+    <children>
+        <HBox layoutY="85.0" prefHeight="225.0" prefWidth="1666.0">
+            <children>
+                <Pane prefHeight="162.0" prefWidth="323.0" style="-fx-background-color: #3195d4;">
+                    <children>
+                        <Label layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="0" textFill="#f2eded">
+                            <font>
+                                <Font size="41.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="4.0" layoutY="59.0" prefHeight="50.0" prefWidth="200.0" text="Departments" textFill="#f2eded">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <MFXButton layoutX="1.0" layoutY="187.0" onAction="#showManageDept" prefHeight="38.0" prefWidth="315.0" style="-fx-background-color: #246f9e;" text="more info -&gt;" />
+                    </children>
+                </Pane>
+                <Separator orientation="VERTICAL" prefHeight="225.0" prefWidth="139.0" />
+                <Pane layoutX="10.0" layoutY="10.0" prefHeight="162.0" prefWidth="290.0" style="-fx-background-color: #e84875;">
+                    <children>
+                        <Label layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="0" textFill="#f2eded">
+                            <font>
+                                <Font size="41.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="4.0" layoutY="59.0" prefHeight="50.0" prefWidth="200.0" text="Staff" textFill="#f2eded">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <MFXButton layoutY="187.0" onAction="#showManageStaff" prefHeight="38.0" prefWidth="282.0" style="-fx-background-color: #ad3255;" text="more info -&gt;" />
+                    </children>
+                </Pane>
+                <Separator layoutX="210.0" layoutY="10.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="175.0" />
+                <Pane layoutX="240.0" layoutY="10.0" prefHeight="162.0" prefWidth="288.0" style="-fx-background-color: #e68c2c;">
+                    <children>
+                        <Label layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="0" textFill="#f2eded">
+                            <font>
+                                <Font size="41.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="4.0" layoutY="59.0" prefHeight="50.0" prefWidth="200.0" text="Leave Requests" textFill="#f2eded">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <MFXButton layoutY="187.0" prefHeight="38.0" prefWidth="281.0" style="-fx-background-color: #bd7324;" text="more info -&gt;" />
+                    </children>
+                </Pane>
+                <Separator layoutX="440.0" layoutY="10.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="140.0" />
+                <Pane layoutX="470.0" layoutY="10.0" prefHeight="162.0" prefWidth="297.0" style="-fx-background-color: #4ac926;">
+                    <children>
+                        <Label layoutX="6.0" layoutY="6.0" prefHeight="50.0" prefWidth="114.0" text="\$0" textFill="#f2eded">
+                            <font>
+                                <Font size="41.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="4.0" layoutY="59.0" prefHeight="50.0" prefWidth="200.0" text="Sallary payed" textFill="#f2eded">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Label>
+                        <MFXButton layoutY="187.0" onAction="#showManageSalary" prefHeight="38.0" prefWidth="290.0" style="-fx-background-color: #348a1c;" text="more info -&gt;" />
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+        <FlowPane prefHeight="54.0" prefWidth="1677.0">
+            <children>
+                <Label prefHeight="49.0" prefWidth="1585.0" style="-fx-background-color: #1b3270;" text="Dashbord" textFill="#e1dcdc">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                </Label>
+                <MFXButton fx:id="btnLogout" onAction="#handleLogout" prefHeight="48.0" prefWidth="80.0" style="-fx-background-color: #3480eb;" text="Log Out" textFill="#fcf8f8">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </MFXButton>
+            </children>
+        </FlowPane>
+    </children>
+</Pane>

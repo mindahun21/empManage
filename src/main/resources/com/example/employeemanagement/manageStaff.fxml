@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="manageStaffPane" prefHeight="950.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;" visible="true" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.ManageStaffController">
+    <children>
+        <FlowPane prefHeight="49.0" prefWidth="1677.0">
+            <children>
+                <Label prefHeight="49.0" prefWidth="1573.0" style="-fx-background-color: #1b3270;" text="Staff Management" textFill="#e1dcdc">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <MFXButton fx:id="btnLogout" onAction="#handleLogout" prefHeight="48.0" prefWidth="80.0" style="-fx-background-color: #3480eb;" text="Log Out" textFill="#fcf8f8">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </MFXButton>
+            </children>
+        </FlowPane>
+      <ScrollPane layoutX="22.0" layoutY="66.0" prefHeight="870.0" prefWidth="1635.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <content>
+            <TableView fx:id="employeeTable" prefHeight="835.0" prefWidth="1792.0">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="54.0" style="-fx-background-color: #f2f2f2;" text="ID" />
+                <TableColumn fx:id="firstNameColumn" prefWidth="137.0" text="First Name" />
+                  <TableColumn fx:id="lastNameColumn" prefWidth="122.0" style="-fx-background-color: #f2f2f2;" text="Last Name" />
+                  <TableColumn fx:id="genderColumn" prefWidth="63.0" text="gender" />
+                  <TableColumn fx:id="roleColumn" prefWidth="66.0" style="-fx-background-color: #f2f2f2;" text="Role" />
+                  <TableColumn fx:id="departmentColumn" prefWidth="138.0" text="department" />
+                  <TableColumn fx:id="emailColumn" prefWidth="183.0" style="-fx-background-color: #f2f2f2;" text="Email" />
+                  <TableColumn fx:id="phoneColumn" prefWidth="129.0" text="Phone" />
+                  <TableColumn fx:id="addressColumn" prefWidth="146.0" style="-fx-background-color: #f2f2f2;" text="Address" />
+                  <TableColumn fx:id="doJoinColumn" prefWidth="145.0" text="DOJoin" />
+                  <TableColumn fx:id="eContactColumn" prefWidth="150.0" style="-fx-background-color: #f2f2f2;" text="E-contact" />
+                  <TableColumn fx:id="positionColumn" prefWidth="122.0" text="position" />
+                  <TableColumn fx:id="salaryColumn" prefWidth="99.0" style="-fx-background-color: #f2f2f2;" text="salary" />
+                  <TableColumn fx:id="actionsColumn" prefWidth="200.0" text="actions" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+    </children>
+</Pane>

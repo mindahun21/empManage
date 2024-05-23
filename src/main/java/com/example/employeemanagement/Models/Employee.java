@@ -40,6 +40,9 @@ public class Employee {
     @Column(name = "Email")
     private String email;
 
+    @Column(name="Password")
+    private String password;
+
     @Column(name = "Phone")
     private String phone;
 
@@ -61,7 +64,7 @@ public class Employee {
     public Employee(){
 
     }
-    public Employee(String firstName, String lastName, String gender, Date dateOfBirth, Role role, Integer departmentId, String email, String phone, String address, java.sql.Date dateOfJoining, String emergencyContact, String position, double baseSalary) {
+    public Employee(String firstName, String lastName, String gender, Date dateOfBirth, Role role, Integer departmentId, String email,String password, String phone, String address, java.sql.Date dateOfJoining, String emergencyContact, String position, double baseSalary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -69,6 +72,7 @@ public class Employee {
         this.role = role;
         this.departmentId = departmentId;
         this.email = email;
+        this.password=password;
         this.phone = phone;
         this.address = address;
         this.dateOfJoining = dateOfJoining;
@@ -76,117 +80,96 @@ public class Employee {
         this.position = position;
         this.baseSalary = baseSalary;
     }
-
     public int getEmployeeId() {
         return employeeId;
     }
-
     public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
     }
-
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
     public String getGender() {
         return gender;
     }
-
     public void setGender(String gender) {
         this.gender = gender;
     }
-
     public java.sql.Date getDateOfBirth() {
         return dateOfBirth;
     }
-
     public void setDateOfBirth(java.sql.Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
     public Role getRole() {
         return role;
     }
-
     public void setRole(Role role) {
         this.role = role;
     }
-
     public Integer getDepartmentId() {
         return departmentId;
     }
-
     public void setDepartmentId(Integer departmentId) {
         this.departmentId = departmentId;
     }
-
     public String getEmail() {
         return email;
     }
-
+    public String getPassword() {
+        return password;
+    }
     public void setEmail(String email) {
         this.email = email;
     }
-
+    public void setPassword(String password) {
+        this.password = Employee.this.password;
+    }
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
-
     public java.sql.Date getDateOfJoining() {
         return dateOfJoining;
     }
-
     public void setDateOfJoining(java.sql.Date dateOfJoining) {
         this.dateOfJoining = dateOfJoining;
     }
-
     public String getEmergencyContact() {
         return emergencyContact;
     }
-
     public void setEmergencyContact(String emergencyContact) {
         this.emergencyContact = emergencyContact;
     }
-
     public String getPosition() {
         return position;
     }
-
     public void setPosition(String position) {
         this.position = position;
     }
-
     public double getBaseSalary() {
         return baseSalary;
     }
-
     public void setBaseSalary(double baseSalary) {
         this.baseSalary = baseSalary;
     }
+
 }
 

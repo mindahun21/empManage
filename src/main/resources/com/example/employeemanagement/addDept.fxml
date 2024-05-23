@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<Pane
+    xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.example.employeemanagement.Controllers.AddDeptController"
+    fx:id="addDeptPane" prefHeight="819.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;">
+    <children>
+        <FlowPane prefHeight="54.0" prefWidth="1677.0">
+            <children>
+                <Label prefHeight="49.0" prefWidth="1573.0" style="-fx-background-color: #1b3270;" text="Add Department" textFill="#e1dcdc">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <MFXButton fx:id="btnLogout" onAction="#handleLogout" prefHeight="48.0" prefWidth="80.0" style="-fx-background-color: #3480eb;" text="Log Out" textFill="#fcf8f8">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </MFXButton>
+            </children>
+        </FlowPane>
+        <VBox layoutX="20.0" layoutY="91.0" prefHeight="309.0" prefWidth="1623.0" style="-fx-background-color: white;">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
+            </padding>
+            <children>
+                <Label prefHeight="32.0" prefWidth="1004.0" text="Department Name:">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="addDeptName" prefHeight="37.0" prefWidth="1563.0" promptText="enter departnment name" />
+                <Separator prefHeight="36.0" prefWidth="1563.0" />
+                <Label layoutX="40.0" layoutY="30.0" prefHeight="32.0" prefWidth="1004.0" text="Manager Id:">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="addDeptMID" layoutX="40.0" layoutY="62.0" prefHeight="37.0" prefWidth="1563.0" promptText="enter manager id" />
+                <Separator layoutX="40.0" layoutY="99.0" prefHeight="36.0" prefWidth="1563.0" />
+                <MFXButton fx:id="btnAddDeptSubmit" buttonType="RAISED" depthLevel="LEVEL4" onAction="#handleAddDept" prefHeight="33.0" prefWidth="216.0" style="-fx-background-color: green;" styleClass="mfx-button" text="ADD" textFill="#fcfafa" />
+            </children>
+        </VBox>
+    </children>
+</Pane>

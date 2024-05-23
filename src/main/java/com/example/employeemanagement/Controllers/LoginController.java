@@ -1,28 +1,48 @@
 package com.example.employeemanagement.Controllers;
 
-import com.example.employeemanagement.DemoDb.Employee;
+import com.example.employeemanagement.Helper;
+import com.example.employeemanagement.Models.Employee;
 import com.example.employeemanagement.MainApp;
-import io.github.palexdev.materialfx.controls.MFXButton;
+import com.example.employeemanagement.database.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
-import java.io.IOException;
+import java.util.Map;
+
 
 public class LoginController {
     private MainApp mainApp;
+
+    @FXML
+    private TextField loginEmail;
+    @FXML
+    private PasswordField loginPassword;
+
+
+    @FXML
+    private void handleLogin(ActionEvent event) {
+        String email = loginEmail.getText();
+        String password = loginPassword.getText();
+
+        Map<String, Object> criteria = Map.of(
+                "email", email,
+                "password",password
+                );
+
+        Employee employee = Database.findObjectByCriteria(Employee.class, criteria);
+        if (employee != null) {
+            mainApp.showHomePage(employee);
+        } else {
+            Helper.showAlert(Alert.AlertType.ERROR,"Login Error", "Invalid email or password.", "Please check your login credentials and try again.");
+        }
+    }
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }
 
-    @FXML
-    private void handleLogin(ActionEvent event) {
-        Employee employee = new Employee();
-        mainApp.showHomePage(employee);
-    }
 
 }

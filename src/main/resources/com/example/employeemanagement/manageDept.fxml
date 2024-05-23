@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="manageDeptPane" prefHeight="967.0" prefWidth="1677.0" style="-fx-background-color: #d2d2d4;" visible="true" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeemanagement.Controllers.ManageDeptController">
+    <children>
+        <FlowPane prefHeight="54.0" prefWidth="1677.0">
+            <children>
+                <Label prefHeight="49.0" prefWidth="1573.0" style="-fx-background-color: #1b3270;" text="Department Management" textFill="#e1dcdc">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <MFXButton fx:id="btnLogout" onAction="#handleLogout" prefHeight="48.0" prefWidth="80.0" style="-fx-background-color: #3480eb;" text="Log Out" textFill="#fcf8f8">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </MFXButton>
+            </children>
+        </FlowPane>
+        <ScrollPane layoutX="-1.0" layoutY="49.0" prefHeight="916.0" prefWidth="1677.0">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            <content>
+                <TableView fx:id="departmentTable" prefHeight="841.0" prefWidth="1584.0">
+                    <columns>
+                        <TableColumn fx:id="departmentIdColumn" prefWidth="53.0" text="ID" />
+                        <TableColumn fx:id="departmentNameColumn" prefWidth="361.0" text="Department Name" />
+                        <TableColumn fx:id="actionColumn" prefWidth="417.0" text="Actions" />
+                    </columns>
+                </TableView>
+            </content>
+        </ScrollPane>
+    </children>
+</Pane>

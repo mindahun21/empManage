@@ -20,6 +20,7 @@ module com.example.employeemanagement {
     exports com.example.employeemanagement;
     opens com.example.employeemanagement.database to javafx.base;
     exports com.example.employeemanagement.Controllers;
+    exports com.example.employeemanagement.Models;
     opens com.example.employeemanagement.Controllers to javafx.fxml;
     opens com.example.employeemanagement.Models to org.hibernate.orm.core;
 
